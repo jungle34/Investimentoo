@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="view_carteiras_tree" model="ir.ui.view">
+		<field name="name">carteiras.tree</field>
+		<field name="model">investimentoo.carteiras</field>
+		<field name="arch" type="xml">
+			<tree string="Carteiras">
+				<field name="name"/>
+				<field name="obs"/>
+			</tree>
+		</field>
+	</record>	
+
+	<record id="view_carteiras_form" model="ir.ui.view">
+		<field name="name">carteiras.form</field>
+		<field name="model">investimentoo.carteiras</field>
+		<field name="arch" type="xml">
+			<form string="Carteiras">
+				<sheet>
+					<group>
+						<field name="name"/>
+						<field name="obs"/>
+					</group>
+					<notebook>
+						<page string="Movimentos">
+							<field name="movimentos">
+								<tree editable="bottom">									
+									<field name="ativo"/>
+									<field name="data"/>
+									<field name="quantidade"/>
+									<field name="valor_unit"/>
+								</tree>
+								<form>
+									<group>										
+										<field name="ativo"/>
+										<field name="data"/>
+										<field name="quantidade"/>
+										<field name="valor_unit"/>
+									</group>
+								</form>
+							</field>
+						</page>
+					</notebook>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<!--nome = fields.Char(string='Nome', required=True)
+	ativo = fields.Char(string='Ativo', required=True)
+	setor = fields.Many2one('investimentoo.setores', string='Setor')
+	tipo = fields.Many2one('investimentoo.tipos', string='Tipo')
+	logo = fields.Char(string='Logo')-->
+
+	<record model="ir.actions.act_window" id="investimentoo_carteira_window">
+		<field name="name">Carteiras</field>
+		<field name="res_model">investimentoo.carteiras</field>		
+		<field name="view_mode">tree,form</field>
+	</record>
+</odoo>

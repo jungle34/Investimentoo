@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>	
+	<record id="investimentoo_view_form" model="ir.ui.view">
+		<field name="name">investimentoo.form</field>
+		<field name="model">investimentoo.ativos</field>
+		<field name="arch" type="xml">
+			<form string="Ativos">
+				<sheet>
+					<group>
+						<field name="name"/>
+						<field name="sector"/>
+						<field name="asset_type"/>
+						<field name="write_date"/>
+					</group>
+					<notebook>
+						<page string="Fechamentos">
+							<field name="fechamentos">
+								<tree editable="bottom">
+									<field name="data"/>
+									<field name="close"/>
+									<field name="volume"/>
+									<field name="market_cap"/>
+									<field name="change"/>
+								</tree>
+								<form>
+									<group>
+										<field name="data"/>
+										<field name="close"/>
+										<field name="volume"/>
+										<field name="market_cap"/>
+										<field name="change"/>
+									</group>
+								</form>
+							</field>
+						</page>
+					</notebook>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record id="investimentoo_view_tree" model="ir.ui.view">
+		<field name="name">investimentoo.tree</field>
+		<field name="model">investimentoo.ativos</field>
+		<field name="arch" type="xml">
+			<tree string="Ativos">
+				<field name="name"/>
+				<field name="sector"/>
+				<field name="asset_type"/>
+				<field name="write_date"/>
+			</tree>
+		</field>
+	</record>
+
+	<record model="ir.actions.act_window" id="investimentoo_ativos_window">
+		<field name="name">Ativos</field>
+		<field name="res_model">investimentoo.ativos</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+</odoo>

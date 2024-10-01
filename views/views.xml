@@ -1,0 +1,17 @@
+<odoo>
+	<data>    
+
+		<menuitem id="menu_root" name="Investimentoo" sequence="10"/>
+	  
+		<menuitem id="menu_ativos" name="Ativos" parent="menu_root" action="investimentoo_ativos_window" sequence="20"/>
+
+		<menuitem id="menu_carteira" name="Carteiras" parent="menu_root" action="investimentoo_carteira_window" sequence="30"/>
+		
+		<menuitem id="menu_fechamentos" name="Fechamentos" parent="menu_root" action="fechamento_action" sequence="40"/>
+
+		<menuitem id="menu_config" name="Configurações" parent="menu_root" sequence="50"/>
+
+		<menuitem id="menu_brapi" name="Brapi" parent="menu_config" action="investimentoo_brapi_window" sequence="10"/>
+	  
+	</data>
+</odoo>

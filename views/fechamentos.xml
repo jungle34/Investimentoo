@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<!--ativo_id = fields.Many2one('investimentoo.ativos', string='Ativo', required=True)
+	data = fields.Date(string='Data', required=True)
+
+	close = fields.Float(string='Valor', required=True)
+	volume = fields.Float(string='Volume', required=True)
+	market_cap = fields.Float(string='Market Cap', required=True)
+	change = fields.Float(string='Variacao', required=True)-->
+	
+	<record model="ir.ui.view" id="fechamento_form_view">
+		<field name="name">fechamento.form</field>
+		<field name="model">investimentoo.fechamentos</field>
+		<field name="arch" type="xml">
+			<form string="Fechamentos">
+				<sheet>
+					<group>
+						<field name="ativo_id"/>
+						<field name="data"/>
+						<field name="close"/>
+						<field name="volume"/>
+						<field name="market_cap"/>
+						<field name="change"/>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+	
+	<record model="ir.ui.view" id="fechamento_tree_view">
+		<field name="name">fechamento.tree</field>
+		<field name="model">investimentoo.fechamentos</field>
+		<field name="arch" type="xml">
+			<tree string="Fechamentos">
+				<field name="ativo_id"/>
+				<field name="data"/>
+				<field name="close"/>
+				<field name="volume"/>
+				<field name="market_cap"/>
+				<field name="change"/>
+			</tree>
+		</field>		
+	</record>
+	
+	<record model="ir.actions.act_window" id="fechamento_action">
+		<field name="name">Fechamentos</field>
+		<field name="res_model">investimentoo.fechamentos</field>		
+		<field name="view_mode">tree,form</field>
+	</record>
+</odoo>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="brapi_view_form" model="ir.ui.view">
+		<field name="name">investimentoo.form</field>
+		<field name="model">investimentoo.brapi</field>
+		<field name="arch" type="xml">
+			<form string="Ativos">
+				<sheet>
+					<group>
+						<field name="base_url"/>
+						<field name="api_key" password="True"/>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+	
+	<record id="brapi_view_tree" model="ir.ui.view">
+		<field name="name">investimentoo.tree</field>
+		<field name="model">investimentoo.brapi</field>
+		<field name="arch" type="xml">
+			<tree string="Ativos">
+				<field name="base_url"/>
+				<field name="api_key" password="True"/>
+			</tree>
+		</field>
+	</record>
+	
+	<record model="ir.actions.act_window" id="investimentoo_brapi_window">
+		<field name="name">Brapi</field>
+		<field name="res_model">investimentoo.brapi</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+</odoo>
